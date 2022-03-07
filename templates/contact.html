@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block message %}
+    {% if special_message[0] %}
+        <div class="alert alert-primary" role="alert">
+             {{special_message[0]}}<b>{{special_message[4]}}</b>{{special_message[5]}}<a href={{special_message[1]}} class="alert-link">{{special_message[2]}}</a>{{special_message[3]}}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    <h5>If you are interested in my project or my profile, please contact me via my <a href="https://www.linkedin.com/in/pnthanhson/" class="alert-link">LinkedIn</a> or leave me a message below:<br><br></h5>
+    <form action="/contact" method="post">
+        <div class="mb-3">
+            <input class="form-control" id="contact" name="name" placeholder="Your name..." type="text" width=500 required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" id="contact" name="email" placeholder="Your email..." type="email" width=500 required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" id="contact" name="subject" placeholder="Subject..." type="text" required>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" id="contact" name="message" rows="5" placeholder="Your message..."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send message</button>
+    </form>
+{% endblock %}

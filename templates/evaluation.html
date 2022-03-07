@@ -1,0 +1,311 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Evaluation
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+      <select class="form-select mx-auto w-auto" autofocus name="portfolio" id="portfolio" required>
+          <option disabled selected value="" >Select portfolio</option>
+          <option value="GR">Germany</option>
+          <option value="US">U.S.</option>
+          <option value="VN">Vietnam</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <select class="form-select mx-auto w-auto"  name="performance" id="performance" required>
+          <option disabled selected value="" >Select benchmark</option>
+          <option id="SPX" value="SPX">S&P 500</option>
+          <option id="CCMP" value="CCMP">NASDAQ</option>
+          <option id="INDU" value="INDU">Dow Jones</option>
+          <option id="NYA" value="NYA">NYSE</option>
+          <option id="DAX" value="DAX">DAX</option>
+          <option id="HDAX" value="HDAX">HDAX</option>
+          <option id="VNINDEX" value="VNINDEX">VN Index</option>
+          <option id="VHINDEX" value="VHINDEX">HNX Index</option>
+          <option id="VN30-INDEX" value="VN30-INDEX">VN30 Index</option>
+          <option id="UPCOM-INDEX" value="UPCOM-INDEX">UpCom Index</option>
+      </select>
+    </div>
+
+    <div>{{message}}</div>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <div class="row" id="headId">
+        <div class="col-md-6">
+          <div style="text-align:center" id="port_name"><b>Net Aset Value</b></div>
+          <div style="text-align:center" style="display: block; margin: 0 auto;" height='450px'>
+            <a id="chartContainer" style="height: 480px; width: 100%;"></a>
+            <a id="linechart_NAV" style="height: 450px; width: 100%; display: block; margin: 0 auto;"></a>
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <div style="text-align:center"  id="perf_name"><b>Portfolio Performance vs. Benchmark</b></div>
+          <div style="text-align:center" style="display: block; margin: 0 auto;" height='450px'>
+            <a id="chartContainer" style="height: 480px; width: 100%;"></a>
+            <a id="linechart_PvsB" style="height: 450px; width: 100%; display: block; margin: 0 auto;"></a>
+          </div>
+        </div>
+      </div>
+
+    <script>
+        $("#performance").hide()
+        $("#perf_name").hide()
+        $("#port_name").hide()
+        var indices = ["SPX", "CCMP", "INDU", "NYA", "DAX", "HDAX", "VHINDEX", "VNINDEX", "VN30-INDEX", "UPCOM-INDEX"];
+        var USInd = ["SPX", "CCMP", "INDU", "NYA"];
+        var VNInd = ["VHINDEX", "VNINDEX", "VN30-INDEX", "UPCOM-INDEX"]
+        var GRInd = ["DAX", "HDAX"]
+        for (var i = 0; i < indices.length; i++){
+          $("#" + indices[i]).hide()
+        }
+
+        var data_vn = {{data_vn|tojson}}
+        var data_us = {{data_us|tojson}}
+        var data_gr = {{data_gr|tojson}}
+
+        function NAVchart(){
+          google.charts.load('current', {
+            callback: function () {
+              var data = new google.visualization.DataTable();
+              data.addColumn('date', 'Date');
+              data.addColumn('number', 'NAV');
+              //data.addColumn('number', 'Stock price');
+
+              var data_list
+              var vTitle
+              if ($("#portfolio option:selected").val() == "VN"){
+                  data_list = data_vn;
+                  vTitle = 'thousand VND';
+
+                  // show/hide options for performance chart
+                  indexes = VNInd
+                  for (var i = 0; i < indexes.length; i++){
+                    $("#" + indexes[i]).show();
+                    for (var j = 0; j < indices.length; j++){
+                      if (indexes.includes(indices[j]) == false){
+                        $("#" + indices[j]).hide()
+                      }
+                    }
+                  };
+              }
+              else if ($("#portfolio option:selected").val() == "GR"){
+                  data_list = data_gr
+                  vTitle = 'EUR';
+
+                  // show/hide options for performance chart
+                  indexes = GRInd
+                  for (var i = 0; i < indexes.length; i++){
+                    $("#" + indexes[i]).show();
+                    for (var j = 0; j < indices.length; j++){
+                      if (indexes.includes(indices[j]) == false){
+                        $("#" + indices[j]).hide()
+                      }
+                    }
+                  };
+              }
+              else if ($("#portfolio option:selected").val() == "US"){
+                  data_list = data_us
+                  vTitle = 'USD';
+
+                  // show/hide options for performance chart
+                  indexes = USInd
+                  for (var i = 0; i < indexes.length; i++){
+                    $("#" + indexes[i]).show();
+                    for (var j = 0; j < indices.length; j++){
+                      if (indexes.includes(indices[j]) == false){
+                        $("#" + indices[j]).hide()
+                      }
+                    }
+                  };
+              }
+              var array = []
+              $.each(data_list, function(index, item){
+                item[0] = new Date(item[0]);
+                array.push([item[0], Number(item[3].toFixed(2))]);
+              });
+              data.addRows(array);
+
+              var tickMarks = [];
+              for (var i = 0; i < data.getNumberOfRows(); i++) {
+                tickMarks.push(data.getValue(i, 0));
+              }
+
+              var options = {
+  						  //title : 'Net Asset Value',
+  						  vAxis: {title: '(Unit: ' + vTitle + ')', format: '#,###.##', minorGridlines: {color: '#fff'}},
+  						  hAxis: {gridlines: {color: '#fff'}, minorGridlines: {color: '#404E68'}},
+  						  chartArea: {width: '65%', height: '70%'},
+  						  series: {
+  					            0: { color: '#3366CC' ,
+  					            	annotations: {
+  				            			stemColor: 'none',
+  				            			stemLength: -5,
+  						            	  textStyle: {
+  						            	      color: '#fff'
+  						            	    },
+  						            	    boxStyle: {
+  						            	        stroke: '#DC3912',
+  						            	        strokeWidth: 1,
+  						            	        gradient: {
+  							            	          color1: '#DC3912',
+  							            	          color2: '#DC3912',
+  							            	          x1: '0%',
+  							            	          y1: '0%',
+  							            	          x2: '100%',
+  							            	          y2: '100%',
+
+  							            	        }
+  						            	      }
+  						              }
+  					            }
+  					          },
+  			              seriesType: 'line',
+  			              backgroundColor: { fill:'transparent' },
+  			              legend:'none',
+
+  			              annotations: {
+  			            	  alwaysOutside: true,
+  			            	  stem: {
+  		            				length: 0
+  		            			},
+  			            	  textStyle: {
+  			            	      fontSize: 12,
+  			            	      bold: true,
+  			            	      italic: true
+  			            	    },
+  		            	    boxStyle: {
+  		            	        stroke: '#ccc',
+  		            	        strokeWidth: 1,
+  		            	        gradient: {
+  		            	          color1: '#f3e5f5',
+  		            	          color2: '#f3e5f5',
+  		            	          x1: '0%',
+  		            	          y1: '0%',
+  		            	          x2: '100%',
+  		            	          y2: '100%'
+  		            	        }
+  		            	      }
+  			              }
+			            };
+              chart1 = new google.visualization.LineChart(document.getElementById('linechart_NAV'));
+              chart1.draw(data, options);
+            },
+            packages: ['corechart', 'line']
+        })
+        $("#performance").show()
+        $("#port_name").show()
+        };
+        $("#portfolio").change(NAVchart);
+
+
+
+
+
+
+
+
+
+        function PERFchart(){
+          google.charts.load('current', {
+            callback: function () {
+              var data = new google.visualization.DataTable();
+              data.addColumn('date', 'Date');
+              data.addColumn('number', 'Portfolio Return');
+              data.addColumn('number', 'Benchmark Return');
+
+              var data_list
+              var vTitle
+              if ($("#portfolio option:selected").val() == "VN"){data_list = data_vn}
+              else if ($("#portfolio option:selected").val() == "GR"){data_list = data_gr}
+              else if ($("#portfolio option:selected").val() == "US"){data_list = data_us};
+              position = {"SPX":4, "CCMP":5, "INDU":6, "NYA":7, "DAX":4, "HDAX":5, "VHINDEX":4, "VNINDEX":5, "VN30-INDEX":6, "UPCOM-INDEX":7}
+              key = position[$("#performance option:selected").val()]
+              console.log(key);
+               console.log($("#performance option:selected").val());
+              var array = []
+              array.push([data_list[0][0], 0.00, 0.00])  // Init day
+              for (var i = 1; i < data_list.length; i++){
+                port_ret = Number((((data_list[i][3] - data_list[0][3])/data_list[0][3])*100).toFixed(2));
+                benchmark_ret = Number((((data_list[i][key] - data_list[0][key])/data_list[0][key])*100).toFixed(2));
+                array.push([data_list[i][0], port_ret, benchmark_ret])
+              }
+              data.addRows(array);
+
+              var tickMarks = [];
+              for (var i = 0; i < data.getNumberOfRows(); i++) {
+                tickMarks.push(data.getValue(i, 0));
+              }
+
+              var options = {
+  						  //title : 'Net Asset Value',
+  						  vAxis: {title: 'Unit: (%)', format: '#,###.##', minorGridlines: {color: '#fff'}},
+  						  hAxis: {gridlines: {color: '#fff'}, minorGridlines: {color: '#404E68'}},
+  						  chartArea: {width: '77%', height: '70%'},
+  						  series: {
+  					            0: { color: '#3366CC' ,
+  					            	annotations: {
+  				            			stemColor: 'none',
+  				            			stemLength: -5,
+  						            	  textStyle: {
+  						            	      color: '#fff'
+  						            	    },
+  						            	    boxStyle: {
+  						            	        stroke: '#DC3912',
+  						            	        strokeWidth: 1,
+  						            	        gradient: {
+  							            	          color1: '#DC3912',
+  							            	          color2: '#DC3912',
+  							            	          x1: '0%',
+  							            	          y1: '0%',
+  							            	          x2: '100%',
+  							            	          y2: '100%',
+
+  							            	        }
+  						            	      }
+
+  						              }
+  					            }
+  					          },
+  			              seriesType: 'line',
+  			              backgroundColor: { fill:'transparent' },
+  			              legend: { position: 'bottom' },
+
+  			              annotations: {
+  			            	  alwaysOutside: true,
+  			            	  stem: {
+  		            				length: 0
+  		            			},
+  			            	  textStyle: {
+  			            	      fontSize: 12,
+  			            	      bold: true,
+  			            	      italic: true
+  			            	    },
+  		            	    boxStyle: {
+  		            	        stroke: '#ccc',
+  		            	        strokeWidth: 1,
+  		            	        gradient: {
+  		            	          color1: '#f3e5f5',
+  		            	          color2: '#f3e5f5',
+  		            	          x1: '0%',
+  		            	          y1: '0%',
+  		            	          x2: '100%',
+  		            	          y2: '100%'
+  		            	        }
+  		            	      }
+  			              }
+			            };
+              chart2 = new google.visualization.LineChart(document.getElementById('linechart_PvsB'));
+              chart2.draw(data, options);
+            },
+            packages: ['corechart', 'line']
+        })
+        $("#perf_name").show()
+        };
+        $("#performance").change(PERFchart);
+    </script>
+
+{% endblock %}

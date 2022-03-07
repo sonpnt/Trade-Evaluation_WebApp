@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block script %}
+    <script type="text/javascript" src="https://saham.ime.co.ir/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="/js/canvasjs.stock.min.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var dataPoints = [];
+        var chart_name = '{{ name }}' + ' stock data'
+
+        var stockChart = new CanvasJS.StockChart("chartContainer",{
+          title: {
+              text: chart_name
+            },
+          charts: [{
+            data: [{
+              type: "line", //Change it to "spline", "area", "column"
+              dataPoints : dataPoints
+            }]
+          }],
+          navigator: {
+            slider: {
+              minimum: new Date(2021,01, 01),
+              maximum: new Date(2021,12, 31)
+            }
+          }
+        });
+
+        var data = {{data|tojson}}
+        for(var i = 0; i < data.length; i++){
+          dataPoints.push({x: new Date(data[i].dateTime), y: Number(data[i].close)});
+        };
+        stockChart.render();
+      }
+    </script>
+{% endblock %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" autofocus name="market" required>
+                <option disabled selected value="" >Select market</option>
+                <option value="gr">Germany</option>
+                <option value="us">U.S.</option>
+                <option value="vn">Vietnam</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="symbol" placeholder="Symbol" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form><br><br>
+    <h3><b>Current price of {{ name }} ({{symbol}}): {{price}}.</b></h3><br>
+    <div id="chartContainer" style="height: 450px; width: 100%;"></div>
+    <div>{{message}}</div>
+
+
+{% endblock %}

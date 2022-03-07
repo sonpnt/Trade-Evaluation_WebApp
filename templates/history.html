@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <table class="table tablestriped" id="data-table">
+            <thead>
+                <tr id="headId">
+                    <th colspan='6' style="text-align:left">
+                        SELECT YOUR PORTFOLIO:
+                        <button id="usdport" class="btn btn-primary">USD</button>
+                        <button id="eurport" class="btn btn-primary">EUR</button>
+                        <button id="vndport" class="btn btn-primary">VND</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Volume</th>
+                    <th class="text-end">Transaction Price</th>
+                    <th class="text-end">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr></tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+{% block script %}
+    <script>
+        $(document).ready(function(e) {
+            var data = {{transactions|tojson}};
+            //var datausd = data.US;
+            //var dataeur = data.GR;
+            //var datavnd = data.VN;
+
+            // update table
+            function loadTable(tableId, market) {
+                //$('#' + tableId).empty(); //not really necessary
+                //table head
+                //table body
+                var rows = '';
+
+                $.each(data, function(index, item) {
+                    if (item['market'] == market){
+                        var row = '<tr>';
+                        row += '<td class="text-start">' + item['symbol'] + '</td>';
+                        row += '<td class="text-end">' + item['volume'] + '</td>';
+                        if(item['market']=='US'){
+                            row += '<td class="text-end">$' + item['transaction_price'] + '</td>';
+                        }
+                        else if(item['market']=='GR'){
+                            row += '<td class="text-end">€' + item['transaction_price'] + '</td>';
+                        }
+                        else{
+                            row += '<td class="text-end">VND ' + item['transaction_price'] + '</td>';
+                        }
+                        row += '<td class="text-end">' + item['time'] + '</td>';
+                        rows += row + '<tr>';
+                    }
+                });
+                $('#' + tableId + ' tbody').html(rows);
+            }
+
+            // list all transactions in all portfolios
+            var rows = '';
+            $.each(data, function(index, item) {
+                var row = '<tr>';
+                row += '<td class="text-start">' + item['symbol'] + '</td>';
+                row += '<td class="text-end">' + item['volume'] + '</td>';
+                if(item['market']=='US'){
+                    row += '<td class="text-end">$' + item['transaction_price'] + '</td>';
+                }
+                else if(item['market']=='GR'){
+                    row += '<td class="text-end">€' + item['transaction_price'] + '</td>';
+                }
+                else{
+                    row += '<td class="text-end">VND ' + item['transaction_price'] + '</td>';
+                }
+                row += '<td class="text-end">' + item['time'] + '</td>';
+                rows += row + '<tr>';
+            });
+            $('#data-table' + ' tbody').html(rows);
+            //loadTable('data-table', datausd);
+
+            $('#usdport').click(function(e) {
+                loadTable('data-table', 'US');
+            });
+            $('#eurport').click(function(e) {
+                loadTable('data-table', 'GR');
+            });
+            $('#vndport').click(function(e) {
+                loadTable('data-table', 'VN');
+            });
+        });
+    </script>
+{% endblock %}

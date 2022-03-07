@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <div class="section">
+
+        <table class="table tablestriped" id="data-table">
+            <thead>
+                <tr id="headId">
+                    <th colspan='7' style="text-align:left">
+                        SELECT YOUR PORTFOLIO:
+                        <button id="usdport" class="btn btn-primary">USD</button>
+                        <button id="eurport" class="btn btn-primary">EUR</button>
+                        <button id="vndport" class="btn btn-primary">VND</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-start">Name</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Current Price</th>
+                    <th class="text-end">Cost Price</th>
+                    <th class="text-end">POSITION</th>
+                    <th class="text-end">%Gain/Loss</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td colspan='7' align='center'><i>Loading portfolio data. Please wait....</i></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section" align="left">
+        <b>*Important note:</b><br>
+        <a>The Total gain/loss of your portfolio is also affected by the stocks that you have sold. Thus, Total gain/loss cannot be implied solely from the gains/losses of your current holdings presented in this table. </a>
+    </div>
+{% endblock %}
+{% block script %}
+    <script>
+        $(document).ready(function(e) {
+            $.post('/portfolio',  // url
+                {symbol: "N/A", market: "N/A"}, // data to be submit
+                function(data) {   // success callback function
+                    var datausd = data.US;
+                    var dataeur = data.GR;
+                    var datavnd = data.VN;
+
+                    // update table
+                    function loadTable(tableId, data) {
+                        //table head
+                        //table body
+                        var rows = '';
+                        var stocks = data.stocks;
+                        var cash = data.cash;
+                        var portVal = data.portVal;
+                        var portGL = data.portGL;
+                        $.each(stocks, function(index, item) {
+                            var row = '<tr>';
+                            row += '<td class="text-start">' + item['symbol'] + '</td>';
+                            row += '<td class="text-start">' + item['companyname'] + '</td>';
+                            row += '<td class="text-end">' + item['no_shs'] + '</td>';
+                            row += '<td class="text-end">' + item['current_price'] + '</td>';
+                            row += '<td class="text-end">' + item['cost_price'] + '</td>';
+                            row += '<td class="text-end">' + item['total'] + '</td>';
+                            row += '<td class="text-end">' + item['%g/l'] + '</td>';
+                            rows += row + '<tr>';
+                        });
+                        // insert cash row
+                        var cashRow = '<tr>';
+                        cashRow += '<td class="text-start" colspan="5"><b>CASH</b></td>';
+                        cashRow += '<td class="text-end">' + cash + '</td><td></td>';
+                        cashRow += '</tr>';
+
+                        // insert Portfolio Value row
+                        var portRow = '<tr>';
+                        portRow += '<td class="text-start" colspan="5"><b>PORTFOLIO VALUE</b></td>';
+                        portRow += '<td class="text-end"><b>' + portVal + '</b></td>';
+                        portRow += '<td class="text-end"><b>' + portGL + '</b></td>';
+                        portRow += '</tr>';
+
+                        rows += cashRow;
+                        rows += portRow;
+                        $('#' + tableId + ' tbody').html(rows);
+                    }
+                    loadTable('data-table', datausd);
+
+                    $('#usdport').click(function(e) {
+                        loadTable('data-table', datausd);
+                    });
+                    $('#eurport').click(function(e) {
+                        loadTable('data-table', dataeur);
+                    });
+                    $('#vndport').click(function(e) {
+                        loadTable('data-table', datavnd);
+                    });
+                  },
+                'json'); // response data format
+        });
+    </script>
+{% endblock %}

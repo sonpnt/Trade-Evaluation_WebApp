@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Message
+{% endblock %}
+
+
+{% block main %}
+    <form action="/data" method="post">
+        <div class="mb-3">
+            <input autofocus class="form-control" name="message0" placeholder="Message" type="password" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="message1" placeholder="Message" type="password" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Message</button>
+
+    {% if messages %}
+        <div class="section">
+            <table class="table tablestriped">
+                <thead>
+                    <tr>
+                        <th class="text-start">Time</th>
+                        <th class="text-end">ID</th>
+                        <th class="text-end">Name</th>
+                        <th class="text-end">Email</th>
+                        <th class="text-end">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- TODO: Loop through the database entries to display them in this table -->
+                    {% for message in messages %}
+                        <tr>
+                            <td class="text-start">{{ message.time }}</td>
+                            <td class="text-end"> {{ message.person_id}} </td>
+                            <td class="text-end"> {{ message.name}} </td>
+                            <td class="text-end">{{ message.email}}</td>
+                            <td class="text-end">{{ message.message}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+{% endblock %}

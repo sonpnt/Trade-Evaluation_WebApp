@@ -1,0 +1,413 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About the Platform
+{% endblock %}
+
+{% block aboutme %}
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/templatemo-style.css" />
+  </head>
+
+  <body>
+    <div id="page-wraper">
+      <!-- Sidebar Menu -->
+      <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+          <i class="fa fa-times" id="menu-close"></i>
+          <div class="container">
+            <div class="image">
+              <a href="#"><img src="/static/images/profile.jpg" alt="" /></a>
+            </div>
+            <div class="author-content">
+              <h4>Son Phan</h4>
+              <span>Financial Analyst,</span>
+              <span>MSc. in Finance</span>
+            </div>
+            <nav class="main-nav" role="navigation">
+              <ul class="main-menu">
+                <li><a href="#section1">Managing Hypothetical Portfolio</a></li>
+                <li><a href="#section2">Get Quote</a></li>
+                <li><a href="#section3">Make Transactions</a></li>
+                <li><a href="#section4">See Transaction History</a></li>
+                <li><a href="#section5">View Current Portfolios</a></li>
+                <li><a href="#section6">Performance Evaluation</a></li>
+                <li><a href="#section7">Future Updates</a></li>
+                <li><a href="#section8">Contact Me</a></li>
+              </ul>
+            </nav>
+            <div class="social-network">
+              <ul class="soial-icons">
+                <li>
+                  <a href="https://facebook.com/pnthanhson"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/cs50"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/pnthanhson/"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://medium.com/@sonntphan"><i class="fa fa-medium"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/sonpnt/sonpnt"><i class="fa fa-github"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="copyright-text">
+              <p>© Copyright 2022. All rights reserved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <table class="section data-table" width=100%>
+        <tr class="about-te">
+          <td>
+            <div class="container">
+              <div class="section-heading">
+                <h2>About Trade Evaluation</h2>
+                <div class="line-dec"></div>
+                <span>
+                    Hi, this is Trade Evaluation, a personal project that aims at demonstrating my ability to combine IT skills with financial knowledge to prospective recruiters.
+                    This platform provides investors a set of tools for analyses and visualization of investment performance.
+                </span>
+              </div>
+
+              <section class="section my-work" data-section="section1">
+                <div class="left-image-post">
+                  <div class="row">
+                    <div class="col-md-6">
+                        <iframe width=100% height="250" src="https://www.youtube.com/embed/8kJ1cR2rWwA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="right-text">
+                        <h4>Managing Hypothetical Portfolio</h4>
+                        <p>
+                          <b>Concept:</b> For a new account open, user is provided with hypothetical portolios of cash for each of
+                          the markets that the application supports, namely Germany, the U.S., and Vietnam.
+                          <br>Users can implement their own trading strategies, making decisions on buying or selling which stocks.
+                          The application will help them evaluate and visualize the performance of their portfolio.
+                          <br>Below is a brief guideline to each function of the site.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section my-work" data-section="section2">
+                <div class="right-image-post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-text">
+                        <h4>Get Quote</h4>
+                        <p>
+                          This function allows users to query information about the stock and to check whether the symbol they type in is valid.
+                          <br>To use the function, click <b>Quote</b> on the top menu bar, then type in the symbol of the stock and select its market.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="right-image">
+                        <img src="/static/images/get-quote.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section my-work" data-section="section3">
+                <div class="left-image-post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-image">
+                        <img src="/static/images/trade.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="right-text">
+                        <h4>Make Transactions</h4>
+                        <p>
+                          To make a transaction, users can click <b>Trade</b> on the top menu bar.
+                          Here they first need to select whether they want to buy or sell stocks, then fill in the relevant information and click Buy/Sell.
+                          <br>At the moment, the app will execute the trade at current market price and allow no short-sell or leverage.
+                          More options may be intergrated in the future releases.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section my-work" data-section="section4">
+              <div class="container">
+
+                <div class="right-image-post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-text">
+                        <h4>See Transaction History</h4>
+                        <p>
+                          To view transaction history, users can click <b>History</b> on the top menu bar.
+                          <br>The entire trading history will be presented in the table.
+                          Users can filter each market by selecting the respective portfolio.
+                          <br>In the future releases, more filter options may be integrated.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="right-image">
+                        <img src="/static/images/history.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <section class="section my-work" data-section="section5">
+                <div class="left-image-post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-image">
+                        <img src="/static/images/portfolio.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="right-text">
+                        <h4>View Current Portfolios</h4>
+                        <p>
+                          This function enables users to update the status quo of their portfolios.
+                          <br>To visit this tab, users first need to click <b>Portfolio</b> on the top menu bar.
+                          Here data on every individual holding and on portfolio level is presented.
+                          The cost price is calculated using weighted average method and returns are derived accordingly.
+                          <br>At the moment, no cash deposit or withdrawal is allowed.
+                          The future releases may incorporate these options to make the hypothetical portfolio more realistic.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+              <section class="section my-work" data-section="section6">
+              <div class="container">
+
+                <div class="right-image-post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-text">
+                        <h4>Performance Evaluation</h4>
+                        <p>
+                          This is the core function of the platform, which aims at enabling investors a tool to conduct "comprehensive" analyses on their portfolio performance.
+                          <br>For the current version, users can click <b>Evaluation</b> tab on top,
+                          selecting the market that they wish to review historical performance,
+                          and selecting the respective benchmark against which they want to compare their performance.
+                          <br>In the future releases, multiple further analyses may be provided. See <b>Future Updates</b> for more details.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="right-image">
+                        <img src="/static/images/evaluation.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <section class="section my-work" data-section="section7">
+                <div class="left-image-post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-image">
+                        <img src="/static/images/future-updates.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="right-text">
+                        <h4>Future Updates</h4>
+                        <p>
+                          Beside the additional options mentioned above, adding new features in the core function
+                          Performance Evaluation will be the main focus for the future updates:
+                          <ul>
+                            <li>Factor-based analyses (using 5-factor model and estimating portfolio's alpha);</li>
+                          </ul>
+                          <ul>
+                            <li>Measurement of turnover, liquidity, risks, and risk-adjusted returns;</li>
+                          </ul>
+                          <ul>
+                            <li>Option to upload real portfolio data in excel format to obtain performance evaluation from the platform.</li>
+                          </ul>
+                        </p>
+                      </div>
+                    </div>
+                  </div><br><br>
+                </div>
+              </section>
+
+            </div>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <section class="section contact-me" data-section="section8">
+              <div class="container">
+                <div class="section-heading">
+                  <h2>Contact Me</h2>
+                  <div class="line-dec"></div>
+                  <span>If you are interested in my project/my profile, or you want to give some feedback, please leave me a message here or on LinkedIn.
+                  Please also notice that you need to log in to send messages.</span><br><br>
+                </div>
+                <div class="row">
+                  <div class="right-content">
+                    <div class="container">
+                      <form id="contact" action="/contact" method="post">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <fieldset>
+                              <input
+                                name="name"
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                placeholder="Your name..."
+                                required
+                              />
+                            </fieldset>
+                          </div>
+                          <div class="col-md-6">
+                            <fieldset>
+                              <input
+                                name="email"
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                placeholder="Your email..."
+                                required
+                              />
+                            </fieldset>
+                          </div>
+                          <div class="col-md-12">
+                            <fieldset>
+                              <input
+                                name="subject"
+                                type="text"
+                                class="form-control"
+                                id="subject"
+                                placeholder="Subject..."
+                                required
+                              />
+                            </fieldset>
+                          </div>
+                          <div class="col-md-12">
+                            <fieldset>
+                              <textarea
+                                name="message"
+                                rows="6"
+                                class="form-control"
+                                id="message"
+                                placeholder="Your message..."
+                                required
+                              ></textarea>
+                            </fieldset>
+                          </div>
+                          <div class="col-md-12">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="button">
+                                Send Message
+                              </button>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/custom.js"></script>
+    <script>
+      //according to loftblog tut
+      $(".main-menu li:first").addClass("active");
+
+      var showSection = function showSection(section, isAnimate) {
+        var direction = section.replace(/#/, ""),
+          reqSection = $(".section").filter(
+            '[data-section="' + direction + '"]'
+          ),
+          reqSectionPos = reqSection.offset().top - 0;
+
+        if (isAnimate) {
+          $("body, html").animate(
+            {
+              scrollTop: reqSectionPos
+            },
+            800
+          );
+        } else {
+          $("body, html").scrollTop(reqSectionPos);
+        }
+      };
+
+      var checkSection = function checkSection() {
+        $(".section").each(function() {
+          var $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+          if (topEdge < wScroll && bottomEdge > wScroll) {
+            var currentId = $this.data("section"),
+              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+            reqLink
+              .closest("li")
+              .addClass("active")
+              .siblings()
+              .removeClass("active");
+          }
+        });
+      };
+
+      $(".main-menu").on("click", "a", function(e) {
+        e.preventDefault();
+        showSection($(this).attr("href"), true);
+      });
+
+      $(window).scroll(function() {
+        checkSection();
+      });
+    </script>
+  </body>
+{% endblock %}
+
+{% block endScript %}
+  <script>
+    $(".small").hide()
+    $(".p-5").hide()
+  </script>
+{% endblock %}
