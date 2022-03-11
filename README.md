@@ -14,10 +14,10 @@ For details on how to use this sample as a template in Cloud Code, read the docu
 
 ### Run the app locally with the Cloud Run Emulator
 1. Click on the Cloud Code status bar and select 'Run on Cloud Run Emulator'.  
-![image](https://https://sphanfinance.com/img/status-bar.png)
+![image](https://https://sphanfinance.com/statics/img/status-bar.png)
 
 2. Use the Cloud Run Emulator dialog to specify your [builder option](https://cloud.google.com/code/docs/vscode/deploying-a-cloud-run-app#deploying_a_cloud_run_service). Cloud Code supports Docker, Jib, and Buildpacks. See the skaffold documentation on [builders](https://skaffold.dev/docs/pipeline-stages/builders/) for more information about build artifact types.  
-![image](./img/build-config.png)
+![image](https://https://sphanfinance.com/statics/img/build-config.png)
 
 3. Click ‘Run’. Cloud Code begins building your image.
 
