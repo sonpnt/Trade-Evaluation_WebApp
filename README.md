@@ -37,7 +37,7 @@ For details on how to use this sample as a template in Cloud Code, read the docu
 ![image](./img/edit-config.png)
 
 2. Select 'Cloud Run: Run Locally' and specify your [builder option](https://cloud.google.com/code/docs/intellij/developing-a-cloud-run-app#defining_your_run_configuration). Cloud Code supports Docker, Jib, and Buildpacks. See the skaffold documentation on [builders](https://skaffold.dev/docs/pipeline-stages/builders/) for more information about build artifact types.  
-![image](./img/local-build-config.png)
+![image](https://https://sphanfinance.com/img/local-build-config.png)
 
 #### Run the application
 1. Click the Run/Debug configurations dropdown and select 'Cloud Run: Run Locally'. Click the run icon.  
