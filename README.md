@@ -2,6 +2,8 @@
 [**Application Features**](#features)
 | [**Requirements**](#requirements)
 | [**Project components**](#components)
+| [**Resources and Inspirations**](#resources-and-inspirations)
+| [**Hire Me**](#hire-me)
 
 - I started investing on stock market 8 years ago and always wanted to make a comprehensive assessment of my portfolio performance. However, the only thing my broker could provide was the status quo of my portfolio and its holdings. Not much has changed until today.
 - Sometimes, I also learn from somewhere very interesting investment strategies and stock picks but did not have a tool to keep track their performance for future usage.
@@ -13,6 +15,8 @@
 * [Application Features](#features)
 * [Requirements](#requirements)
 * [Project components](#components)
+* [Resources and Inspirations](#resources-and-inspirations)
+* [Hire Me](#hire-me)
 
 ---
 ## Features
@@ -51,8 +55,8 @@ The logic part of the app is written using Python Flask, a light-weight and easy
 ## Resources and Inspirations
 - :blue_book: Computational thinking courses - Mannheim university.
 - :book: Introduction to Computer Science (CS50) - [Harvard University](https://cs50.harvard.edu/x/2022/).
-- Google Cloud Tech - [Youtube Channel](https://www.youtube.com/user/googlecloudplatform)
-- Free Stock Data for Python Using Yahoo Finance API - [Towards Data Science](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e)
+- :cloud: Google Cloud Tech - [Youtube Channel](https://www.youtube.com/user/googlecloudplatform)
+- :gift: Free Stock Data for Python Using Yahoo Finance API - [Towards Data Science](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e)
 
 ## Hire me
 Looking for a finance professional who is interested in and capable of using programming to build financial and data analytics apps? Get in touch: [pnthanhson.ftu2@gmail.com](mailto:pnthanhson.ftu2@gmail.com)
