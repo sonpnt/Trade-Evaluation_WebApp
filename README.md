@@ -32,6 +32,10 @@ Try it now: [sphanfinance.com](https://sphanfinance.com/)
 ## Requirements
 - Python 2.7 or above.
 - HTTP Server (e.g. Google Cloud server)
-- My SQL
+- MySQL
 
 ## Components
+1. Data APIs: 
+- U.S. and German markets: [IEX](https://iextrading.com/developer), [Yahoo Finance](https://www.yahoofinanceapi.com/), [Bloomberg](https://www.bloomberg.com/)
+- Vietnam market: [Saigon Securities Inc. (SSI)](https://www.ssi.com.vn/en), [VietDragon Securities Corp. (VDS)](https://www.vdsc.com.vn/en/home.rv) 
+2. 
