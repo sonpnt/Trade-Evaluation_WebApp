@@ -1,4 +1,4 @@
-# WebApp: Trade Evaluation
+# Web App: Trade Evaluation
 [**Application Features**](#features)
 | [**Requirements**](#requirements)
 | [**Project components**](#components)
@@ -35,7 +35,24 @@ Try it now: [sphanfinance.com](https://sphanfinance.com/)
 - MySQL
 
 ## Components
-1. Data APIs: 
+### Data APIs:
+
 - U.S. and German markets: [IEX](https://iextrading.com/developer), [Yahoo Finance](https://www.yahoofinanceapi.com/), [Bloomberg](https://www.bloomberg.com/)
 - Vietnam market: [Saigon Securities Inc. (SSI)](https://www.ssi.com.vn/en), [VietDragon Securities Corp. (VDS)](https://www.vdsc.com.vn/en/home.rv) 
-2. 
+
+✍️ In order to minimize the database that needs storing and to save deployment costs, I only store data related to users and query market data from third-paty sources. This requires me to compromise the application performance a bit but I still managed to optimize data processing algorithm and limit reponse time to less than 20s for the most complicated requests.
+
+### Logic codes
+The logic part of the app is written using Python Flask, a light-weight and easy-to-use web development package. Since I am not a professional web developer, using Python enable me to focus on my strengths in building algorithms and data analytics while minimizing complexity of the code for the web server. This logic part comprises of 3 python files: `app.py`, `evaluation.py`, and `helpers.py`.
+1. `app.py`: Focuses on handling requests from client side, storing client-related data (e.g. their credentials, transaction data).
+2. `evaluation.py`: Focuses on querying time-series data from external APIs to support the core-function performance evaluation of the application.
+3. `helpers.py`: Provides functions to request basic data from APIs, perform analyses, and other logical tasks to support the main file `app.py`. 
+
+## Resources and Inspirations
+- :blue_book: Computational thinking courses - Mannheim university.
+- :book: Introduction to Computer Science (CS50) - [Harvard University](https://cs50.harvard.edu/x/2022/).
+- Google Cloud Tech - [Youtube Channel](https://www.youtube.com/user/googlecloudplatform)
+- Free Stock Data for Python Using Yahoo Finance API - [Towards Data Science](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e)
+
+## Hire me
+Looking for a finance professional who is interested in and capable of using programming to build financial and data analytics apps? Get in touch: [pnthanhson.ftu2@gmail.com](mailto:pnthanhson.ftu2@gmail.com)
