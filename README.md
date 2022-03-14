@@ -5,8 +5,9 @@
 | [**Neural net libraries**](#neural-network-libraries)
 | [**Change logs**](https://jax.readthedocs.io/en/latest/changelog.html)
 | [**Reference docs**](https://jax.readthedocs.io/en/latest/)
-
-"Hello World" 
+- I started investing on stock market 8 years ago and always wanted to make a comprehensive assessment of my portfolio performance. However, the only thing my broker could provide was the status quo of my portfolio and its holdings. Not much has changed until today.
+- Sometimes, I also learn from somewhere very interesting investment strategies and stock picks but did not have a tool to keep track their performance for future usage.
+- Today, with enough technical skills, I want 
 
 
 
