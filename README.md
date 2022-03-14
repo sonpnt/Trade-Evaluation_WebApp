@@ -17,20 +17,21 @@
 ---
 ## Features
 
-### Run the app locally with the Cloud Run Emulator
-1. Click on the Cloud Code status bar and select 'Run on Cloud Run Emulator'.  
-![image](https://https://sphanfinance.com/statics/img/status-bar.png)
+1. Log in with demonstration account: If you are a visitor and just want to know how the features look like, go to log in page and use the account that has been set up for demonstration purpose. 
+![image](https://scontent-frx5-2.xx.fbcdn.net/v/t39.30808-6/275610810_5041581762552081_1079274052069687686_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=2c4854&_nc_ohc=Tz-zqT_EGRQAX_b8558&_nc_ht=scontent-frx5-2.xx&oh=00_AT8BJ1TunBWLjXinEkpsAsvyurx-7fg6xE8tvbIK_o6PCw&oe=6233D7F7)
 
-2. Use the Cloud Run Emulator dialog to specify your [builder option](https://cloud.google.com/code/docs/vscode/deploying-a-cloud-run-app#deploying_a_cloud_run_service). Cloud Code supports Docker, Jib, and Buildpacks. See the skaffold documentation on [builders](https://skaffold.dev/docs/pipeline-stages/builders/) for more information about build artifact types.  
-![image](https://https://sphanfinance.com/statics/img/build-config.png)
+2. Three markets supported: U.S, Germany, Vietnam
+3. Get stock quote: select the market, enter the stock symbol (in Bloomberg standard) and hit "Quote" to see more details. Quote can be used to check whether a symbol is valid.
+4. Make hypothetical trades: Select buy/sell, choose the symbol, type in volume, and hit "Buy/Sell"
+5. Review current status of portfolios: individual holding level and aggregate portfolio level
+6. See transaction history and filter it by market
+7. Portfolio performance evaluation: select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against
 
-3. Click ‘Run’. Cloud Code begins building your image.
+Try it now: [sphanfinance.com](https://sphanfinance.com/)
 
-4. View the build progress in the OUTPUT window. Once the build has finished, click on the URL in the OUTPUT window to view your live application.  
-![image](./img/cloud-run-url.png)
-
-5. To stop the application, click the stop icon on the Debug Toolbar.
 ## Requirements
-
+- Python 2.7 or above.
+- HTTP Server (e.g. Google Cloud server)
+- My SQL
 
 ## Components
