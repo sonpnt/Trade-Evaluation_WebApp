@@ -26,10 +26,19 @@
 
 2. Three markets supported: U.S, Germany, Vietnam.
 3. Get stock quote: select the market, enter the stock symbol (in Bloomberg standard) and hit "Quote" to see more details. Quote can be used to check whether a symbol is valid.
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+
 4. Make hypothetical trades: Select buy/sell, choose the symbol, type in volume, and hit "Buy/Sell".
-5. Review current status of portfolios: individual holding level and aggregate portfolio level.
-6. See transaction history and filter it by market.
-7. Portfolio performance evaluation: select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against.
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+
+6. Review current status of portfolios: individual holding level and aggregate portfolio level.
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+
+7. See transaction history and filter it by market.
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+
+8. Portfolio performance evaluation: select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against.
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
 
 Try those features now: [sphanfinance.com](https://sphanfinance.com/login)
 
