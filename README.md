@@ -24,14 +24,14 @@
 1. Log in with demonstration account: If you are a visitor and just want to know how the features look like, go to log in page and use the account that has been set up for demonstration purpose. 
 ![image](https://scontent-frx5-2.xx.fbcdn.net/v/t39.30808-6/275610810_5041581762552081_1079274052069687686_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=2c4854&_nc_ohc=Tz-zqT_EGRQAX_b8558&_nc_ht=scontent-frx5-2.xx&oh=00_AT8BJ1TunBWLjXinEkpsAsvyurx-7fg6xE8tvbIK_o6PCw&oe=6233D7F7)
 
-2. Three markets supported: U.S, Germany, Vietnam
+2. Three markets supported: U.S, Germany, Vietnam.
 3. Get stock quote: select the market, enter the stock symbol (in Bloomberg standard) and hit "Quote" to see more details. Quote can be used to check whether a symbol is valid.
-4. Make hypothetical trades: Select buy/sell, choose the symbol, type in volume, and hit "Buy/Sell"
-5. Review current status of portfolios: individual holding level and aggregate portfolio level
-6. See transaction history and filter it by market
-7. Portfolio performance evaluation: select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against
+4. Make hypothetical trades: Select buy/sell, choose the symbol, type in volume, and hit "Buy/Sell".
+5. Review current status of portfolios: individual holding level and aggregate portfolio level.
+6. See transaction history and filter it by market.
+7. Portfolio performance evaluation: select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against.
 
-Try it now: [sphanfinance.com](https://sphanfinance.com/)
+Try those features now: [sphanfinance.com](https://sphanfinance.com/login)
 
 ## Requirements
 - Python 2.7 or above.
@@ -52,11 +52,14 @@ The logic part of the app is written using Python Flask, a light-weight and easy
 2. `evaluation.py`: Focuses on querying time-series data from external APIs to support the core-function performance evaluation of the application.
 3. `helpers.py`: Provides functions to request basic data from APIs, perform analyses, and other logical tasks to support the main file `app.py`. 
 
+### Database
+A sample file `finance.db` is included above to give you a perspective of how the relational database in this case looks like.
+
 ## Resources and Inspirations
 - :blue_book: Computational thinking courses - Mannheim university.
 - :book: Introduction to Computer Science (CS50) - [Harvard University](https://cs50.harvard.edu/x/2022/).
-- :cloud: Google Cloud Tech - [Youtube Channel](https://www.youtube.com/user/googlecloudplatform)
-- :gift: Free Stock Data for Python Using Yahoo Finance API - [Towards Data Science](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e)
+- :cloud: Google Cloud Tech - [Youtube Channel](https://www.youtube.com/user/googlecloudplatform).
+- :gift: Free Stock Data for Python Using Yahoo Finance API - [Towards Data Science](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e).
 
 ## Hire me
 Looking for a finance professional who is interested in and capable of using programming to build financial and data analytics apps? Get in touch: [pnthanhson.ftu2@gmail.com](mailto:pnthanhson.ftu2@gmail.com)
