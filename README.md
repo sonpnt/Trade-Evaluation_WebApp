@@ -22,7 +22,7 @@
 ## Features
 
 1. Log in with demonstration account: If you are a visitor and just want to know how the features look like, go to log in page and use the account that has been set up for demonstration purpose. 
-![image](https://scontent-frx5-2.xx.fbcdn.net/v/t39.30808-6/275610810_5041581762552081_1079274052069687686_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=2c4854&_nc_ohc=Tz-zqT_EGRQAX_b8558&_nc_ht=scontent-frx5-2.xx&oh=00_AT8BJ1TunBWLjXinEkpsAsvyurx-7fg6xE8tvbIK_o6PCw&oe=6233D7F7)
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/login.gif)
 
 2. Three markets supported: U.S, Germany, Vietnam.
 3. Get stock quote: select the market, enter the stock symbol (in Bloomberg standard) and hit "Quote" to see more details. Quote can be used to check whether a symbol is valid.
