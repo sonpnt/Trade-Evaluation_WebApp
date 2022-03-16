@@ -1,7 +1,7 @@
 # Web App: Trade Evaluation
 [**Application Features**](#features)
 | [**Requirements**](#requirements)
-| [**Project components**](#components)
+| [**Project Components**](#components)
 | [**Resources and Inspirations**](#resources-and-inspirations)
 | [**Hire Me**](#hire-me)
 
