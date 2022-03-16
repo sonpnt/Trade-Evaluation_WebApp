@@ -32,7 +32,7 @@
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/trade.gif)
 
 **6. Review current status of portfolios:** individual holding level and aggregate portfolio level.
-![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/portfolio.gif)
 
 **7. See transaction history and filter it by market.**
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/history.gif)
