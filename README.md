@@ -31,13 +31,13 @@
 **4. Make hypothetical trades:** Select buy/sell, choose the symbol, type in volume, and hit "Buy/Sell".
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/trade.gif)
 
-**6. Review current status of portfolios:** individual holding level and aggregate portfolio level.
+**5. Review current status of portfolios:** individual holding level and aggregate portfolio level.
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/portfolio.gif)
 
-**7. See transaction history and filter it by market.**
+**6. See transaction history and filter it by market.**
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/history.gif)
 
-**8. Portfolio performance evaluation:** select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against.
+**7. Portfolio performance evaluation:** select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against.
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/evaluation.gif)
 
 Try those features now: [sphanfinance.com](https://sphanfinance.com/login)
