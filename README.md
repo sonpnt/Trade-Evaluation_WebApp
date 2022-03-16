@@ -29,7 +29,7 @@
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
 
 **4. Make hypothetical trades:** Select buy/sell, choose the symbol, type in volume, and hit "Buy/Sell".
-![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/trade.gif)
 
 **6. Review current status of portfolios:** individual holding level and aggregate portfolio level.
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
