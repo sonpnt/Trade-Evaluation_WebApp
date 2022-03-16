@@ -35,10 +35,10 @@
 ![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
 
 **7. See transaction history and filter it by market.**
-![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/history.gif)
 
 **8. Portfolio performance evaluation:** select market to see how net asset value grew, then select a respective benchmark to compare portfolio returns against.
-![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/quote.gif)
+![image](https://github.com/sonpnt/Trade-Evaluation_WebApp/blob/main/static/images/evaluation.gif)
 
 Try those features now: [sphanfinance.com](https://sphanfinance.com/login)
 
